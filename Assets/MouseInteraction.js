@@ -19,7 +19,7 @@ function Update () {
 			gameObject.transform.position = hit.point;
 			gameObject.transform.position.x = Mathf.Floor(gameObject.transform.position.x / brick_size) * brick_size;
 			gameObject.transform.position.y = Mathf.Floor(gameObject.transform.position.y / brick_size) * brick_size;
-			gameObject.transform.position.z = Mathf.Floor(gameObject.transform.position.z / brick_size) * brick_size;
+			gameObject.transform.position.z = 0;//Mathf.Floor(gameObject.transform.position.z / brick_size) * brick_size;
 			
 			gameObject.transform.position.y += gameObject.transform.localScale.x;
 		}
