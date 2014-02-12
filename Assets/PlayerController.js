@@ -1,11 +1,14 @@
 ﻿#pragma strict
 
-function Start () {
+var player_wheel:WheelCollider;
 
+function Start () {
+	player_wheel = GameObject.Find("player_wheel").GetComponent(WheelCollider);	
 }
 
 var rotation_speed:float = 1;
 var sin_angle:float;
+var jump_force:float;
 
 function FixedUpdate () {
 	
@@ -17,17 +20,26 @@ function FixedUpdate () {
 	if(Input.GetKey(KeyCode.RightArrow)) {
 		transform.Rotate(0, 0, rotation_speed);
 	}
-		
-	if(transform.rotation.eulerAngles.y < 270 && transform.rotation.eulerAngles.y > 179) {
-		transform.rotation = Quaternion.Euler(270, 270, 0);	
-	}
-	if(transform.rotation.eulerAngles.y > 90 && transform.rotation.eulerAngles.y < 180) {
-		transform.rotation = Quaternion.Euler(270, 90, 0);	
-	}
-	
+
 	sin_angle = Mathf.Sin(Mathf.Deg2Rad * this.gameObject.transform.rotation.eulerAngles.y);
-	rigidbody.drag = Mathf.Pow(Mathf.Abs(sin_angle), 4.0f);
+
+	if(player_wheel.isGrounded) {
 	
+		if(transform.rotation.eulerAngles.y < 270 && transform.rotation.eulerAngles.y > 179) {
+			transform.rotation = Quaternion.Euler(270, 270, 0);	
+		}
+		if(transform.rotation.eulerAngles.y > 90 && transform.rotation.eulerAngles.y < 180) {
+			transform.rotation = Quaternion.Euler(270, 90, 0);	
+		}
+		
+		if(Input.GetKeyDown(KeyCode.Space)) {
+			rigidbody.AddForce(Vector3.up * jump_force, ForceMode.Impulse);
+		}
+		
+		rigidbody.drag = Mathf.Pow(Mathf.Abs(sin_angle), 4.0f);
+	} else {
+		
+	}
 }
 
 function OnGUI() {

@@ -10,4 +10,5 @@ Assets/**/.mayaSwatches/
 *.pdb
 *.pidb
 *.exe
+*.userprefs
 desktop.ini
