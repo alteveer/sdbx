@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MouseInteraction.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayerController.js">
     <Files>
-      <File FileName="Assets\MouseInteraction.js" Line="42" Column="1" />
+      <File FileName="Assets\PlayerController.js" Line="6" Column="1" />
+      <File FileName="Assets\CameraFollow.js" Line="18" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
