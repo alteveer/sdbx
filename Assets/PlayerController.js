@@ -44,7 +44,7 @@ function FixedUpdate () {
 
 function OnGUI() {
 	//GUILayout.Label(Mathf.Sin(Mathf.Deg2Rad * this.gameObject.transform.rotation.eulerAngles.y).ToString("0.0"));
-	GUILayout.Label(sin_angle.ToString("0.0"));
-	GUILayout.Label(rigidbody.drag.ToString("0.0"));
+	//GUILayout.Label(sin_angle.ToString("0.0"));
+	//GUILayout.Label(rigidbody.drag.ToString("0.0"));
 	//GUILayout.Label((Mathf.Rad2Deg * transform.localRotation.eulerAngles).ToString("0.0"));
 }
